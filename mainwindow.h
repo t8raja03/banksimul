@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QString>
-#include "../banksimul_console/banksimul_databaseLIB/banksimul_databaselib.h"
+#include "banksimul_databaseLIB/banksimul_databaselib.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
