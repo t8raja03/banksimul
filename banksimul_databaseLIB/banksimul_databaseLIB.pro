@@ -25,7 +25,7 @@ HEADERS += \
     banksimul_databaseLIB_global.h \
     banksimul_databaselib.h
 
-DESTDIR = ..\release\
+DESTDIR = C:\banksimul\release
 
 # Default rules for deployment.
 unix {

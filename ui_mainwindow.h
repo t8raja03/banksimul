@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.8
+** Created by: Qt User Interface Compiler version 5.9.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -70,14 +70,10 @@ public:
         palette.setBrush(QPalette::Active, QPalette::Base, brush1);
         QBrush brush2(QColor(85, 255, 255, 128));
         brush2.setStyle(Qt::SolidPattern);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette::Active, QPalette::PlaceholderText, brush2);
-#endif
+        //palette.setBrush(QPalette::Active, QPalette::PlaceholderText, brush2);
         palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
         palette.setBrush(QPalette::Inactive, QPalette::Base, brush1);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush2);
-#endif
+        //palette.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush2);
         QBrush brush3(QColor(120, 120, 120, 255));
         brush3.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Disabled, QPalette::Text, brush3);
@@ -86,9 +82,7 @@ public:
         palette.setBrush(QPalette::Disabled, QPalette::Base, brush4);
         QBrush brush5(QColor(0, 0, 0, 128));
         brush5.setStyle(Qt::SolidPattern);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush5);
-#endif
+        //palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush5);
         textBrowser->setPalette(palette);
         QFont font;
         font.setPointSize(16);

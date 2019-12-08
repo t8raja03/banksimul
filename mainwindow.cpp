@@ -10,10 +10,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     timer = new QTimer;
 
+    kortti = new RfidDLL;
+    kortti->palautaPankkikortinNumeroKomponentti();
+
     Idle();
 
     this->connect(this, SIGNAL(signal_card_read(QString)), this, SLOT(card_read(QString)));
     this->connect(timer, SIGNAL(timeout()), this, SLOT(updateTime()));
+    this->connect(kortti, SIGNAL(SignaaliRFID(QString)), this, SLOT(card_read(QString)));
 
 }
 
@@ -22,6 +26,7 @@ MainWindow::~MainWindow()
     delete ui;
     delete timer;
     delete db;
+    delete kortti;
 }
 
 void MainWindow::card_read(QString id)

@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <QString>
 #include "banksimul_databaseLIB/banksimul_databaselib.h"
+#include "trfidDLL/rfiddll.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -53,6 +54,8 @@ private:
     bool correct_pin;
     Banksimul_database *db;
     unsigned int mode;
+
+    RfidDLL *kortti;
 
     void Timer(unsigned int time);
     void MainMenu();

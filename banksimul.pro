@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,7 +25,8 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
-LIBS += release\banksimul_databaseLIB.dll
+LIBS += release\banksimul_databaseLIB.dll \
+        release\rfidDLL.dll
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
