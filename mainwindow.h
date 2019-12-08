@@ -6,6 +6,7 @@
 #include <QString>
 #include "banksimul_databaseLIB/banksimul_databaselib.h"
 #include "trfidDLL/rfiddll.h"
+#include "pinwindow/pinwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -56,6 +57,8 @@ private:
     unsigned int mode;
 
     RfidDLL *kortti;
+
+    Pinwindow *pinkysely;
 
     void Timer(unsigned int time);
     void MainMenu();

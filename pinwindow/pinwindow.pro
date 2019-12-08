@@ -1,6 +1,8 @@
-QT       += core gui serialport
+QT += gui widgets
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+TEMPLATE = lib
+
+DEFINES += PINWINDOW_LIBRARY
 
 CONFIG += c++11
 
@@ -16,20 +18,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    main.cpp \
-    mainwindow.cpp
+    pinwindow.cpp \
+    pinwindowengine.cpp
 
 HEADERS += \
-    mainwindow.h
-
-FORMS += \
-    mainwindow.ui
-
-LIBS += release\banksimul_databaseLIB.dll \
-        release\rfidDLL.dll \
-        release\pinwindow.dll
+    pinwindow_global.h \
+    pinwindow.h \
+    pinwindowengine.h
 
 # Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
+unix {
+    target.path = /usr/lib
+}
 !isEmpty(target.path): INSTALLS += target
+
+FORMS += \
+    pinwindowengine.ui
+
+DESTDIR = D:\Users\jarno\Documents\Qt_projects\banksimul\release

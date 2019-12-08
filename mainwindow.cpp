@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
     kortti = new RfidDLL;
     kortti->palautaPankkikortinNumeroKomponentti();
 
+    pinkysely = new Pinwindow;
+
     Idle();
 
     this->connect(this, SIGNAL(signal_card_read(QString)), this, SLOT(card_read(QString)));
@@ -27,6 +29,7 @@ MainWindow::~MainWindow()
     delete timer;
     delete db;
     delete kortti;
+    delete pinkysely;
 }
 
 void MainWindow::card_read(QString id)
@@ -37,6 +40,7 @@ void MainWindow::card_read(QString id)
         db->connect();
         qDebug() << cur_rfid;
         ui->textBrowser->setText("<p align=center><br><br><br>Syötä pin-koodi</p>");
+        pinkysely->showPinWindowAPI();
         Timer(10);
     }
 }
